@@ -7,6 +7,9 @@
 #include <QLineEdit>
 #include <QPushButton>
 
+struct ProcInfo;
+struct CPUInfo;
+
 
 class MainWindow : public QMainWindow
 {
@@ -14,6 +17,8 @@ class MainWindow : public QMainWindow
 
 public:
     MainWindow(QWidget *parent = 0);
+    CPUInfo getCpuInfo();
+    ProcInfo getProcInfo(int pid);
     ~MainWindow();
 
     QLabel *label;
@@ -21,7 +26,7 @@ public:
     QPushButton *button;
 
 private slots:
-    void save();
+    void checkpoint();
 };
 
 #endif // MAINWINDOW_H
